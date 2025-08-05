@@ -16,7 +16,9 @@
   const issue = await jQuery.getJSON("/rest/api/3/issue/" + ticketID);
   const jiraTicketTitle = issue.fields.summary
     .trim()
-    .replace(/[^a-z0-9]/g, "-"); // Replace anything that is not alphanumeric with -
+    .replace(/[^a-z0-9A-Z]/g, "-") // Replace anything that is not alphanumeric with -
+    .replace(/\-+/g, "-") // Replace double -
+    .replace(/  /g, " "); // Replace double space
   const jiraTicketType = issue.fields.issuetype.name.toLowerCase();
 
   const ticketToGithubTitle = {
