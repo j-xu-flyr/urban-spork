@@ -1,0 +1,13 @@
+{
+  "name": "urban-spork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "esbuild src/* --servedir=. --outdir=dist/js",
+    "build": "esbuild src/* --minify --outdir=dist/js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
