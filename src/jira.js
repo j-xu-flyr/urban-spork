@@ -15,7 +15,7 @@
 
   const issue = await jQuery.getJSON("/rest/api/3/issue/" + ticketID);
   const jiraTicketTitle = issue.fields.summary
-    .replace(/[^a-z0-9A-Z/ ]/g, " ") // Replace anything else with space
+    .replace(/[^a-z0-9A-Z/]/g, " ") // Replace anything else with space
     .replace(/  /g, " ") // Replace double space
     .trim();
   const jiraTicketType = issue.fields.issuetype.name.toLowerCase();
